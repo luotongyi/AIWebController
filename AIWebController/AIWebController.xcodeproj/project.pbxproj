@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B98771DB223F893700B4CA27 /* jquery-1.8.3.min.js in Resources */ = {isa = PBXBuildFile; fileRef = B98771D9223F893700B4CA27 /* jquery-1.8.3.min.js */; };
+		B98771DC223F893700B4CA27 /* ai-interactive-api.js in Resources */ = {isa = PBXBuildFile; fileRef = B98771DA223F893700B4CA27 /* ai-interactive-api.js */; };
+		B98771DF223F896000B4CA27 /* AIBridgeController.h in Headers */ = {isa = PBXBuildFile; fileRef = B98771DD223F896000B4CA27 /* AIBridgeController.h */; };
+		B98771E0223F896000B4CA27 /* AIBridgeController.m in Sources */ = {isa = PBXBuildFile; fileRef = B98771DE223F896000B4CA27 /* AIBridgeController.m */; };
 		B9AA9A6C222E1186002FBBCF /* AIWebController.h in Headers */ = {isa = PBXBuildFile; fileRef = B9AA9A6A222E1186002FBBCF /* AIWebController.h */; };
 		B9AA9A6D222E1186002FBBCF /* AIWebController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9AA9A6B222E1186002FBBCF /* AIWebController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B98771D9223F893700B4CA27 /* jquery-1.8.3.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "jquery-1.8.3.min.js"; sourceTree = "<group>"; };
+		B98771DA223F893700B4CA27 /* ai-interactive-api.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "ai-interactive-api.js"; sourceTree = "<group>"; };
+		B98771DD223F896000B4CA27 /* AIBridgeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIBridgeController.h; sourceTree = "<group>"; };
+		B98771DE223F896000B4CA27 /* AIBridgeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIBridgeController.m; sourceTree = "<group>"; };
 		B9AA9A59222E104E002FBBCF /* AIWebController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AIWebController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9AA9A5D222E104E002FBBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9AA9A6A222E1186002FBBCF /* AIWebController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIWebController.h; sourceTree = "<group>"; };
@@ -48,9 +56,13 @@
 		B9AA9A5B222E104E002FBBCF /* AIWebController */ = {
 			isa = PBXGroup;
 			children = (
+				B98771DA223F893700B4CA27 /* ai-interactive-api.js */,
+				B98771D9223F893700B4CA27 /* jquery-1.8.3.min.js */,
 				B9AA9A5D222E104E002FBBCF /* Info.plist */,
 				B9AA9A6A222E1186002FBBCF /* AIWebController.h */,
 				B9AA9A6B222E1186002FBBCF /* AIWebController.m */,
+				B98771DD223F896000B4CA27 /* AIBridgeController.h */,
+				B98771DE223F896000B4CA27 /* AIBridgeController.m */,
 			);
 			path = AIWebController;
 			sourceTree = "<group>";
@@ -63,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AA9A6C222E1186002FBBCF /* AIWebController.h in Headers */,
+				B98771DF223F896000B4CA27 /* AIBridgeController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +136,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98771DC223F893700B4CA27 /* ai-interactive-api.js in Resources */,
+				B98771DB223F893700B4CA27 /* jquery-1.8.3.min.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98771E0223F896000B4CA27 /* AIBridgeController.m in Sources */,
 				B9AA9A6D222E1186002FBBCF /* AIWebController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

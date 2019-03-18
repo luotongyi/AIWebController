@@ -29,13 +29,6 @@
 @property (nonatomic, copy  )   NSDictionary *headerParams;
 
 /**
- *  @brief 是否在新的界面打开跳转的url，默认NO
- *  一次设置，终身受益，设置为YES时，以后一直会跳转新Page
- *  如果只针对某个界面，请通过jsName方法处理
- **/
-@property (nonatomic, assign)   BOOL    pushNewPage;
-
-/**
  *  JS 调用OC 注册 messageHandler 的方法名
  *  window.webkit.messageHandlers.<name>.postMessage(<messageBody>)
  *  eg. @[@"showA",@"showB"];
@@ -46,31 +39,11 @@
 @property (nonatomic, copy  )   NSArray<NSString *> *jsNamesArray;
 
 /**
- 8  JS 调用OC 方法实现，需要开发者自己实现
- *  @brief message.name，message.body
- *  eg. [controller setJsCallNativeBlock:^(NSString *name, id body) {
- *
- *      }];
- **/
-@property (nonatomic, copy  )   void(^jsCallNativeBlock)(NSString *name,id body);
-
-/**
- *  OC调用JS方法回调
- *  response js回调结果
- */
-@property (nonatomic, copy  )   void(^evaluateJSBlock)(id response);
-
-/**
  *  OC调用JS方法
  *  jsMethod js内容
  *  eg. [NSString stringWithFormat:@"writeCardCallback(%@);",[array toJSONString]];
  */
 - (void)handleJS:(NSString *)js;
-
-
-@property (nonatomic, strong)   UIView *loadingFailView;
-
-@property (nonatomic, strong)   UIView *loadingView;
 
 /**
  *  @brief 加载URL
@@ -82,21 +55,6 @@
  */
 - (void)refresh;
 
-/**
- *  @brief 返回上一个界面---popViewController
- */
-- (void)popController;
-
-/**
- *  @brief 返回web的history---[wkWebView goBack];
- *  如果已经到了history的最后，则调用popController
- **/
-- (void)goWebHistory;
-
-/**
- *  @brief 返回主界面---popToRootViewController
- **/
-- (void)popRootController;
 
 
 @end
