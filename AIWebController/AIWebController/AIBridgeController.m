@@ -21,10 +21,14 @@
     [super viewDidLoad];
     
     AIWebController *controller = [AIWebController new];
-    controller.url = @"https://www.jianshu.com/u/2d18249cc9e2";
+    controller.url = self.url;//@"https://www.jianshu.com/u/2d18249cc9e2";
     
     bridgeNav = [[UINavigationController alloc]initWithRootViewController:controller];
     [self.view addSubview:bridgeNav.view];
+}
+
+-(void)setDataFromWebView: (NSDictionary*) data {
+    self.url = (NSString*)[data valueForKey:@"url"];
 }
 
 - (void)didReceiveMemoryWarning {

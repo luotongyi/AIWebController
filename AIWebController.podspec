@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AIWebController"
-  s.version      = "1.1.1"
+  s.version      = "1.1.2"
   s.summary      = "基于WKWebView的基类封装，用于承载H5业务的iOS SDK"
 
   # This description is used to generate tags and improve search results.

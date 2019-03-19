@@ -8,6 +8,7 @@
 
 #import "AIWebController.h"
 #import <WebKit/WebKit.h>
+//#import "NativePage.h"
 
 #define ML_WEAK_SELF(weakSelf)           __weak __typeof(&*self)weakSelf = self;
 #define ML_STRING_FORMAT(string)         [NSString stringWithFormat:@"%@",(string==nil||[string isKindOfClass:[NSNull class]])?@"":string]
@@ -72,7 +73,7 @@
     [self createLoadingView];
     
     _myProgressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 64, ML_SCREEN_WIDTH, 0)];
-    _myProgressView.progressTintColor = [UIColor blueColor];
+    _myProgressView.tintColor = [UIColor blueColor];
     _myProgressView.trackTintColor = [UIColor whiteColor];
     [self.view addSubview:_myProgressView];
     
@@ -91,7 +92,7 @@
     }
     wkConfig.userContentController = userContentController;
     
-    _wkWebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, ML_SCREEN_WIDTH, ML_SCREEN_HEIGHT-0) configuration:wkConfig];
+    _wkWebView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 0, ML_SCREEN_WIDTH, ML_SCREEN_HEIGHT) configuration:wkConfig];
     _wkWebView.navigationDelegate = self;
     [self.view addSubview:_wkWebView];
     
@@ -257,6 +258,11 @@
     }
 }
 
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView
+{
+    [webView reload];
+}
+
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation
 {
     [self startLoading];
@@ -387,7 +393,7 @@
         [self.navigationController popViewControllerAnimated:YES];
     }
     else{
-        [self dismissViewControllerAnimated:YES completion:nil];
+        //        [NativePage showWebView:nil];
     }
 }
 
